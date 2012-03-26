@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+  <title>NewApp</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "datacapture" %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="javascripts/datacapture.js"></script>
+</head>
+<body>
+<p>Locally stored items: <span id="local-count">0</span></p>
+<p>You are working: <span id="status" class="offline">Offline</span></p>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<h1>New product</h1>
+
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+<h1>Listing products</h1>
+
+<table>
+  <% @products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
